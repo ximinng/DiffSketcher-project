@@ -1,119 +1,140 @@
-<script src="http://www.google.com/jsapi" type="text/javascript"></script> 
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
 <script type="text/javascript">google.load("jquery", "1.3.2");</script>
 <script type="text/javascript" src="./files/prompt_switch.js"></script>
 <style type="text/css">
 	body {
-		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-		font-weight:300;
-		font-size:18px;
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		font-weight: 300;
+		font-size: 18px;
 		margin-left: auto;
 		margin-right: auto;
 		width: 1100px;
 	}
-	
+
 	h1 {
-		font-size:32px;
-		font-weight:300;
+		font-size: 32px;
+		font-weight: 300;
 	}
-	
+
 	.disclaimerbox {
-		background-color: #eee;		
+		background-color: #eee;
 		border: 1px solid #eeeeee;
-		border-radius: 10px ;
-		-moz-border-radius: 10px ;
-		-webkit-border-radius: 10px ;
+		border-radius: 10px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
 		padding: 20px;
 	}
 
 	video.header-vid {
 		height: 140px;
 		border: 1px solid black;
-		border-radius: 10px ;
-		-moz-border-radius: 10px ;
-		-webkit-border-radius: 10px ;
+		border-radius: 10px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
 	}
-	
+
 	img.header-img {
 		height: 140px;
 		border: 1px solid black;
-		border-radius: 10px ;
-		-moz-border-radius: 10px ;
-		-webkit-border-radius: 10px ;
+		border-radius: 10px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
 	}
-	
+
 	img.rounded {
 		border: 1px solid #eeeeee;
-		border-radius: 10px ;
-		-moz-border-radius: 10px ;
-		-webkit-border-radius: 10px ;
+		border-radius: 10px;
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
 	}
-	
-	a:link,a:visited
-	{
+
+	a:link,
+	a:visited {
 		color: #1367a7;
 		text-decoration: none;
 	}
+
 	a:hover {
 		color: #208799;
 	}
-	
+
 	td.dl-link {
 		height: 160px;
 		text-align: center;
 		font-size: 22px;
 	}
-	
-	.layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+
+	.layered-paper-big {
+		/* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
 		box-shadow:
-		0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
-		5px 5px 0 0px #fff, /* The second layer */
-		5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
-		10px 10px 0 0px #fff, /* The third layer */
-		10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
-		15px 15px 0 0px #fff, /* The fourth layer */
-		15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
-		20px 20px 0 0px #fff, /* The fifth layer */
-		20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
-		25px 25px 0 0px #fff, /* The fifth layer */
-		25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+			0px 0px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The top layer shadow */
+			5px 5px 0 0px #fff,
+			/* The second layer */
+			5px 5px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The second layer shadow */
+			10px 10px 0 0px #fff,
+			/* The third layer */
+			10px 10px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The third layer shadow */
+			15px 15px 0 0px #fff,
+			/* The fourth layer */
+			15px 15px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The fourth layer shadow */
+			20px 20px 0 0px #fff,
+			/* The fifth layer */
+			20px 20px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The fifth layer shadow */
+			25px 25px 0 0px #fff,
+			/* The fifth layer */
+			25px 25px 1px 1px rgba(0, 0, 0, 0.35);
+		/* The fifth layer shadow */
 		margin-left: 10px;
 		margin-right: 45px;
 	}
 
-	.paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+	.paper-big {
+		/* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
 		box-shadow:
-		0px 0px 1px 1px rgba(0,0,0,0.35); /* The top layer shadow */
+			0px 0px 1px 1px rgba(0, 0, 0, 0.35);
+		/* The top layer shadow */
 
 		margin-left: 10px;
 		margin-right: 45px;
 	}
 
 
-	.layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+	.layered-paper {
+		/* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
 		box-shadow:
-		0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
-		5px 5px 0 0px #fff, /* The second layer */
-		5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
-		10px 10px 0 0px #fff, /* The third layer */
-		10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+			0px 0px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The top layer shadow */
+			5px 5px 0 0px #fff,
+			/* The second layer */
+			5px 5px 1px 1px rgba(0, 0, 0, 0.35),
+			/* The second layer shadow */
+			10px 10px 0 0px #fff,
+			/* The third layer */
+			10px 10px 1px 1px rgba(0, 0, 0, 0.35);
+		/* The third layer shadow */
 		margin-top: 5px;
 		margin-left: 10px;
 		margin-right: 30px;
 		margin-bottom: 5px;
 	}
-	
+
 	.vert-cent {
 		position: relative;
 		top: 50%;
 		transform: translateY(-50%);
 	}
-	
-	hr
-	{
+
+	hr {
 		border: 0;
 		height: 1px;
 		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 	}
+
 	.prompt-sweep-text {
 		float: right;
 		font-size: 20px;
@@ -121,6 +142,7 @@
 		margin-left: 5%;
 		margin-right: auto;
 	}
+
 	.prompt-sweep-text {
 		float: right;
 		font-size: 20px;
@@ -128,6 +150,7 @@
 		margin-left: 5%;
 		margin-right: auto;
 	}
+
 	.prompt-sweep-img {
 		/*vertical-align: middle;*/
 		/*vertical-align: middle;*/
@@ -137,33 +160,39 @@
 		/* margin-left: auto;
 		margin-right: auto; */
 	}
+
 	.prompt-sweep-bracket {
-		color:  #00000090;
+		color: #00000090;
 		font-size: 20px;
-		float:left;
+		float: left;
 		margin-left: 100px;
 	}
+
 	.prompt-sweep-bracket_1 {
-		color:  #00000090;
+		color: #00000090;
 		font-size: 20px;
-		float:left;
+		float: left;
 		margin-left: 100px;
 	}
 </style>
 
 <html>
+
 <head>
-	<title>Inversion-by-Inversion: Exemplar-based Sketch-to-Photo Synthesis via Stochastic Differential Equations</title>
-	<meta property="og:image" content="Path to my teaser.png"/> <!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
-	<meta property="og:title" content="Inversion-by-Inversion: Exemplar-based Sketch-to-Photo Synthesis via Stochastic Differential Equations" />
+	<title>Inversion-by-Inversion: Exemplar-based Sketch-to-Photo Synthesis via Stochastic Differential Equations
+	</title>
+	<meta property="og:image" content="Path to my teaser.png" />
+	<!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
+	<meta property="og:title"
+		content="Inversion-by-Inversion: Exemplar-based Sketch-to-Photo Synthesis via Stochastic Differential Equations" />
 	<meta property="og:description" content="Inversion-by-Inversion" />
 
 	<!-- Get from Google Analytics -->
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src=""></script> 
+	<script async src=""></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
+		function gtag() { dataLayer.push(arguments); }
 		gtag('js', new Date());
 
 		gtag('config', 'UA-75863369-6');
@@ -173,7 +202,8 @@
 <body>
 	<br>
 	<center>
-		<span style="font-size:36px">DiffSketcher: Text Guided Vector Sketch Synthesis through Latent Diffusion Models</span>
+		<span style="font-size:36px">DiffSketcher: Text Guided Vector Sketch Synthesis through Latent Diffusion
+			Models</span>
 		<div>&nbsp;</div>
 		<table align=center width=1000px>
 			<table align=center width=1000px>
@@ -217,16 +247,17 @@
 					</td>
 				</tr>
 			</table>
-			<table align=center width=250px>
+			<table align=center width=500px>
 				<tr>
-					<td align=center width=120px>
+					<td align=center width=240px>
 						<center>
 							<span style="font-size:24px"><a href=''>[Paper]</a></span>
 						</center>
 					</td>
-					<td align=center width=120px>
+					<td align=center width=240px>
 						<center>
-							<span style="font-size:24px"><a href='https://github.com/ximinng/inversion-by-inversion-pytorch'>[GitHub]</a></span><br>
+							<span style="font-size:24px"><a
+									href='https://github.com/ximinng/inversion-by-inversion-pytorch'>[Code] <span style="font-size:20px">Coming soon</span> </a></span><br>
 						</center>
 					</td>
 				</tr>
@@ -241,7 +272,7 @@
 			<tr>
 				<td width=1200px>
 					<center>
-						<img class="round"style="width: 1000px;" src="./resources/teaser.png"/>
+						<img class="round" style="width: 1000px;" src="./resources/teaser.png" />
 					</center>
 				</td>
 			</tr>
@@ -249,11 +280,14 @@
 		<table align=center width=850px>
 			<tr>
 				<td>
-					Representative exemplar-based sketch-to-photo synthesis results of our proposed Inversion-by-Inversion method. The first
+					Representative exemplar-based sketch-to-photo synthesis results of our proposed
+					Inversion-by-Inversion method. The first
 					four columns provide the sketch-to-photo synthesis results on the AFHQ dataset and CelebA-HQ
 					dataset, and the original photos are displayed in the top-right corner of their
-					corresponding sketches. The fifth to eighth columns show the synthesis results when using different types of exemplars.
-					The last three columns are three examples when using free-hand sketches as the input. Sketches are from the Sketchy
+					corresponding sketches. The fifth to eighth columns show the synthesis results when using different
+					types of exemplars.
+					The last three columns are three examples when using free-hand sketches as the input. Sketches are
+					from the Sketchy
 					database.
 				</td>
 			</tr>
@@ -263,25 +297,38 @@
 	<hr>
 
 	<table align=center width=850px>
-		<center><h1>Abstract</h1></center>
+		<center>
+			<h1>Abstract</h1>
+		</center>
 		<tr>
 			<td>
-				Even trained mainly on images, we discover that pretrained diffusion models show impressive power in guiding sketch synthesis. 
-				In this paper, we present DiffSketcher, an innovative algorithm that creates <i>vectorized</i> free-hand sketches using natural language input. 
-				DiffSketcher is developed based on a pre-trained text-to-image diffusion model. It performs the task by directly optimizing a set of Bézier curves with an extended version of the score distillation sampling (SDS) loss,
-				which allows us to use a raster-level diffusion model as a prior for optimizing a parametric vectorized sketch generator. 
-				Furthermore, we explore attention maps embedded in the diffusion model for effective stroke initialization to speed up the generation process.
-				The generated sketches demonstrate multiple levels of abstraction while maintaining recognizability, underlying structure, and essential visual details of the subject drawn. Our experiments show that DiffSketcher achieves greater quality than prior work.
+				Even trained mainly on images, we discover that pretrained diffusion models show impressive power in
+				guiding sketch synthesis.
+				In this paper, we present DiffSketcher, an innovative algorithm that creates <i>vectorized</i> free-hand
+				sketches using natural language input.
+				DiffSketcher is developed based on a pre-trained text-to-image diffusion model. It performs the task by
+				directly optimizing a set of Bézier curves with an extended version of the score distillation sampling
+				(SDS) loss,
+				which allows us to use a raster-level diffusion model as a prior for optimizing a parametric vectorized
+				sketch generator.
+				Furthermore, we explore attention maps embedded in the diffusion model for effective stroke
+				initialization to speed up the generation process.
+				The generated sketches demonstrate multiple levels of abstraction while maintaining recognizability,
+				underlying structure, and essential visual details of the subject drawn. Our experiments show that
+				DiffSketcher achieves greater quality than prior work.
 			</td>
 		</tr>
 	</table>
 	<br>
 
 	<hr>
-	<center><h1>Talk</h1></center>
-	<p align="center">
-		<iframe width="660" height="395" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen align="center"></iframe>
-	</p>
+	<center>
+		<h1>Talk</h1>
+	</center>
+	<!-- <p align="center">
+		<iframe width="660" height="395" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0"
+			allow="autoplay; encrypted-media" allowfullscreen align="center"></iframe>
+	</p> -->
 
 	<table align=center width=800px>
 		<br>
@@ -294,7 +341,15 @@
 	</table>
 	<hr>
 
-	<center><h1>Code</h1></center>
+	<center>
+		<font size="+2">
+			<p style="text-align: center;">
+			  <!-- <a href="./files/sketch-guided-preprint.pdf" target="_blank">Paper</a> &nbsp;&nbsp;&nbsp;&nbsp; -->
+			  <a>Online Demo <span style="font-size: 14px;">(Coming Soon)</a>
+			</p>
+		  </font>
+		<!-- <a>Code <span style="font-size: 14px;">(Coming Soon)</a> -->
+	</center>
 
 	<table align=center width=420px>
 		<center>
@@ -306,31 +361,35 @@
 	</table>
 	<hr>
 
-	<center><h1>Results</h1></center>
+	<center>
+		<h1>Results</h1>
+	</center>
 	<table align=center width=800px>
 		<div>
 			<div class="prompt-sweep-bracket">
 				<div style="margin-left:-20px">Prompt:</div>
-				
+
 				<br>
 				<div>
-					<span class="prompt-sweep-button_a">Sailboat sailing in the sea on a clear day</span>
+					<span class="prompt-sweep-button_a">SMacaw full color, ultra detailed, realistic, <br> insanely
+						beautiful</span>
 				</div>
 				<br>
 				<div>
-					<span class="prompt-sweep-button_b">Very detailed masterpiece painting of baby <br>yoda hoding a lightsaber</span>
+					<span class="prompt-sweep-button_b">Very detailed masterpiece painting of baby <br>yoda hoding a
+						lightsaber</span>
 				</div>
 				<br>
 				<div>
-					<span class="prompt-sweep-button_c">Macaw full color, ultra detailed, realistic, <br> insanely beautiful</span>
+					<span class="prompt-sweep-button_c">ailboat sailing in the sea on a clear day</span>
 				</div>
 			</div>
 			<div>
 				<div class="prompt-sweep-bracket_1">
 					<span>Sketch: &nbsp;&nbsp;</span>
-					</div>
+				</div>
 
-				<img  id="prompt-sweep-img" src="./files/0.gif" style="width: 300px;">
+				<img id="prompt-sweep-img" src="./files/0.gif" style="width: 300px;">
 			</div>
 		</div>
 		<br>
@@ -340,7 +399,7 @@
 	<br>
 	<hr>
 
-			
+
 	<table align=center width=400px>
 		<tr>
 			<td align=center width=400px>
@@ -363,24 +422,28 @@
 	</table>
 	<table align=center width=800px>
 		<br>
-		<tr><center>
-			<span style="font-size:28px">&nbsp;<a href='https://github.com/richzhang/webpage-template'>[GitHub]</a>
+		<tr>
+			<center>
+				<span style="font-size:28px">&nbsp;<a href='https://github.com/richzhang/webpage-template'>[GitHub]</a>
 			</center>
-		</span>
+			</span>
 	</table>
 	<br>
 	<hr>
 	<table align=center width=450px>
-		<center><h1>Paper and Supplementary Material</h1></center>
+		<center>
+			<h1>Paper and Supplementary Material</h1>
+		</center>
 		<tr>
-			<td><a href=""><img class="layered-paper-big" style="height:175px" src="./resources/paper.png"/></a></td>
+			<td><a href=""><img class="layered-paper-big" style="height:175px" src="./resources/paper.png" /></a></td>
 			<td><span style="font-size:14pt">F. Author, S. Author, T. Author.<br>
-				<b>Inversion-by-Inversion: Exemplar-based Sketch-to-Photo Synthesis via Stochastic Differential Equations</b><br>
-				In Conference, 20XX.<br>
-				(hosted on <a href="">ArXiv</a>)<br>
-				<!-- (<a href="./resources/camera-ready.pdf">camera ready</a>)<br> -->
-				<span style="font-size:4pt"><a href=""><br></a>
-				</span>
+					<b>Inversion-by-Inversion: Exemplar-based Sketch-to-Photo Synthesis via Stochastic Differential
+						Equations</b><br>
+					In Conference, 20XX.<br>
+					(hosted on <a href="">ArXiv</a>)<br>
+					<!-- (<a href="./resources/camera-ready.pdf">camera ready</a>)<br> -->
+					<span style="font-size:4pt"><a href=""><br></a>
+					</span>
 			</td>
 		</tr>
 	</table>
@@ -388,9 +451,11 @@
 
 	<table align=center width=600px>
 		<tr>
-			<td><span style="font-size:14pt"><center>
-				<a href="./resources/bibtex.txt">[Bibtex]</a>
-			</center></td>
+			<td><span style="font-size:14pt">
+					<center>
+						<a href="./resources/bibtex.txt">[Bibtex]</a>
+					</center>
+			</td>
 		</tr>
 	</table>
 
@@ -401,14 +466,19 @@
 		<tr>
 			<td width=400px>
 				<left>
-					<center><h1>Acknowledgements</h1></center>
-					This template was originally made by <a href="http://web.mit.edu/phillipi/">Phillip Isola</a> and <a href="http://richzhang.github.io/">Richard Zhang</a> for a <a href="http://richzhang.github.io/colorization/">colorful</a> ECCV project; the code can be found <a href="https://github.com/richzhang/webpage-template">here</a>.
+					<center>
+						<h1>Acknowledgements</h1>
+					</center>
+					This template was originally made by <a href="http://web.mit.edu/phillipi/">Phillip Isola</a> and <a
+						href="http://richzhang.github.io/">Richard Zhang</a> for a <a
+						href="http://richzhang.github.io/colorization/">colorful</a> ECCV project; the code can be found
+					<a href="https://github.com/richzhang/webpage-template">here</a>.
 				</left>
 			</td>
 		</tr>
 	</table>
 
-<br>
+	<br>
 </body>
-</html>
 
+</html>
