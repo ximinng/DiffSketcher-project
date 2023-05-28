@@ -11,18 +11,19 @@ function changeImage(i){
     // console.log("t"+prompts_parts[i][0].innerHTML)
     // console.log()
     // console.log("./files/" + prompts_parts[i][0].innerHTML.replace(' ','')+".png")
-    image.src = "./files/" +i.toString()+".png"
+    console.log("./files/" +i.toString()+".gif")
+    image.src = "./files/" +i.toString()+".gif"
     console.log(image.src)
 }
 
 function clearStyle(elem){
-    elem.style.color = '#8e8e8e';
+    elem.style.color = '#000000';
     elem.style.backgroundColor = null;
 }
 
 function setStyle(elem){
     elem.style.color = '#000000';
-    elem.style.backgroundColor = '#31DC62';
+    elem.style.backgroundColor = '#F79327';
 }
 
 function modifyPrompt(prompt_indx, i){

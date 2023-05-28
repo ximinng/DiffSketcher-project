@@ -128,6 +128,27 @@
 		margin-left: 5%;
 		margin-right: auto;
 	}
+	.prompt-sweep-img {
+		/*vertical-align: middle;*/
+		/*vertical-align: middle;*/
+		width: 40%;
+		/*flex-basis: 40%*/
+		float: right;
+		/* margin-left: auto;
+		margin-right: auto; */
+	}
+	.prompt-sweep-bracket {
+		color:  #00000090;
+		font-size: 20px;
+		float:left;
+		margin-left: 100px;
+	}
+	.prompt-sweep-bracket_1 {
+		color:  #00000090;
+		font-size: 20px;
+		float:left;
+		margin-left: 50px;
+	}
 </style>
 
 <html>
@@ -283,59 +304,50 @@
 			</tr>
 		</center>
 	</table>
+	<hr>
 
 	<center><h1>Results</h1></center>
-	<div>
-		Prompt:
-			<div>
-				<span class="prompt-sweep-button_a"> a cat</span>
+	<table align=center width=800px>
+		<div>
+			<div class="prompt-sweep-bracket">
+				<div>Prompt:</div>
+				
+				<br>
+				<div>
+					&nbsp;&nbsp;<span class="prompt-sweep-button_a">Sailboat sailing in the sea on a clear day</span>
+				</div>
+				<br>
+				<div>
+					&nbsp;&nbsp;<span class="prompt-sweep-button_b">Very detailed masterpiece painting of baby yoda hoding a lightsaber</span>
+				</div>
+				<br>
+				<div>
+					&nbsp;&nbsp;<span class="prompt-sweep-button_c">Macaw full color, ultra detailed, realistic, insanely beautiful</span>
+				</div>
 			</div>
 			<div>
-				<span class="prompt-sweep-button_b"> a dog</span>
-			</div>
-			<div>
-				<span class="prompt-sweep-button_c"> a fish</span>
-			</div>
-		Image:
-			<img class="prompt-sweep-img" id="prompt-sweep-img" src="./files/0.gif">
-			
-			
-			<!-- <span class="prompt-sweep-button_d"> a cat</span>
-			<span class="prompt-sweep-button_e"> a cat</span> -->
-	</div>
-	<table>
-		<br>
-		<tr>
-			<!-- <center> -->
-					
+				<div class="prompt-sweep-bracket_1">
+					Sketch: &nbsp;&nbsp;
+					</div>
 
-				<!-- <div class="prompt-sweep-main">
-					<div class="prompt-sweep-text">
-					  <br>
-					  Sketch:
-					  <br>
-					  <div class="container"><img src="./files/prompt_switch/sketch.png", style="width:60%"></div>
-					  <br>
-					  Prompt:
-					  <div class="container">
-					  <br>
-					  <span class="prompt-sweep-bracket"><span class="prompt-sweep-button_a">Summer</span> <br> <span class="prompt-sweep-button_a">Dramatic</span> <br> <span class="prompt-sweep-button_a">Cold colors</span></span>
-					  &ensp;&ensp;&ensp;
-					  <span class="prompt-sweep-bracket"><span class="prompt-sweep-button_b">photograph of</span> <br> <span class="prompt-sweep-button_b">3d rendering of</span> <br> <span class="prompt-sweep-button_b">Marc Chagall painting of</span></span>
-					  &ensp;&ensp;&ensp;
-					  <span class="prompt-sweep-bracket"><span class="prompt-sweep-button_c">a stag</span> <br> <span class="prompt-sweep-button_c">a toy stag</span> <br> <span class="prompt-sweep-button_c">an origami stag</span> <br> <span class="prompt-sweep-button_c">a ghost stag</span></span>
-					  </div>
-				  </div> 
-				  <img class="prompt-sweep-img" id="prompt-sweep-img" src="./files/prompt_switch/default.png"> -->
-			<!-- </center> -->
-		</tr>
+				<img  id="prompt-sweep-img" src="./files/0.gif" style="width: 200px;">
+			</div>
+		</div>
+		<br>
 	</table>
+	<br>
+	<br>
+	<br>
+	<hr>
+
+			
 	<table align=center width=400px>
 		<tr>
 			<td align=center width=400px>
 				<center>
 					<!-- <td><img class="round" style="width:450px" src="./resources/method_diagram.pdf"/></td> -->
-					<td><iframe src="./resources/method_diagram.pdf" height="900px;" width="800px"></iframe></td>
+					<!-- <td><iframe src="./resources/method_diagram.pdf" height="900px;" width="800px"></iframe></td> -->
+					<img src="./files/1.png" alt="" style="width:800px">
 				</center>
 			</td>
 		</tr>
