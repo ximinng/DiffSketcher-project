@@ -1,6 +1,6 @@
 <script src="http://www.google.com/jsapi" type="text/javascript"></script> 
 <script type="text/javascript">google.load("jquery", "1.3.2");</script>
-
+<script type="text/javascript" src="./files/prompt_switch.js"></script>
 <style type="text/css">
 	body {
 		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
@@ -114,6 +114,20 @@
 		height: 1px;
 		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 	}
+	.prompt-sweep-text {
+		float: right;
+		font-size: 20px;
+		width: 40%;
+		margin-left: 5%;
+		margin-right: auto;
+	}
+	.prompt-sweep-text {
+		float: right;
+		font-size: 20px;
+		width: 40%;
+		margin-left: 5%;
+		margin-right: auto;
+	}
 </style>
 
 <html>
@@ -206,7 +220,7 @@
 			<tr>
 				<td width=1200px>
 					<center>
-						<img class="round"style="width: 1200px;" src="./resources/teaser.png"/>
+						<img class="round"style="width: 1000px;" src="./resources/teaser.png"/>
 					</center>
 				</td>
 			</tr>
@@ -231,18 +245,12 @@
 		<center><h1>Abstract</h1></center>
 		<tr>
 			<td>
-				Exemplar-based sketch-to-photo synthesis enables a user to generate a photo-realistic image based on a sketch.
-				Recently, diffusion-based methods have achieved impressive performance on image generation tasks and realized
-				highly-flexible control through text-driven generation or energy functions.
-				However, it is still challenging for a diffusion model to handle sketch images. A sketch only contains a few black
-				pixels while the rest are white, making it hard for diffusion-based methods to generate photo-realistic images with
-				color and texture. In this work, we propose an Inversion-by-Inversion method for exemplar-based sketch-to-photo
-				synthesis, including shape-enhancing inversion and full-control inversion. During the shape-enhancing inversion
-				process, an uncolored photo is generated with the guidance of a shape-energy function. This step is essential for
-				this task to ensure sketch control in shape. During the full-control inversion process, we additionally propose an
-				appearance-energy function to add the color and texture of the exemplar and generate the final RGB photo. Our
-				inversion-by-inversion pipeline does not require task-specific training or trainable hyper-network and can accept
-				different types of exemplars for color and texture control.
+				Even trained mainly on images, we discover that pretrained diffusion models show impressive power in guiding sketch synthesis. 
+				In this paper, we present DiffSketcher, an innovative algorithm that creates <i>vectorized</i> free-hand sketches using natural language input. 
+				DiffSketcher is developed based on a pre-trained text-to-image diffusion model. It performs the task by directly optimizing a set of Bézier curves with an extended version of the score distillation sampling (SDS) loss,
+				which allows us to use a raster-level diffusion model as a prior for optimizing a parametric vectorized sketch generator. 
+				Furthermore, we explore attention maps embedded in the diffusion model for effective stroke initialization to speed up the generation process.
+				The generated sketches demonstrate multiple levels of abstraction while maintaining recognizability, underlying structure, and essential visual details of the subject drawn. Our experiments show that DiffSketcher achieves greater quality than prior work.
 			</td>
 		</tr>
 	</table>
@@ -274,6 +282,53 @@
 				</td>
 			</tr>
 		</center>
+	</table>
+
+	<center><h1>Results</h1></center>
+	<div>
+		Prompt:
+			<div>
+				<span class="prompt-sweep-button_a"> a cat</span>
+			</div>
+			<div>
+				<span class="prompt-sweep-button_b"> a dog</span>
+			</div>
+			<div>
+				<span class="prompt-sweep-button_c"> a fish</span>
+			</div>
+		Image:
+			<img class="prompt-sweep-img" id="prompt-sweep-img" src="./files/0.gif">
+			
+			
+			<!-- <span class="prompt-sweep-button_d"> a cat</span>
+			<span class="prompt-sweep-button_e"> a cat</span> -->
+	</div>
+	<table>
+		<br>
+		<tr>
+			<!-- <center> -->
+					
+
+				<!-- <div class="prompt-sweep-main">
+					<div class="prompt-sweep-text">
+					  <br>
+					  Sketch:
+					  <br>
+					  <div class="container"><img src="./files/prompt_switch/sketch.png", style="width:60%"></div>
+					  <br>
+					  Prompt:
+					  <div class="container">
+					  <br>
+					  <span class="prompt-sweep-bracket"><span class="prompt-sweep-button_a">Summer</span> <br> <span class="prompt-sweep-button_a">Dramatic</span> <br> <span class="prompt-sweep-button_a">Cold colors</span></span>
+					  &ensp;&ensp;&ensp;
+					  <span class="prompt-sweep-bracket"><span class="prompt-sweep-button_b">photograph of</span> <br> <span class="prompt-sweep-button_b">3d rendering of</span> <br> <span class="prompt-sweep-button_b">Marc Chagall painting of</span></span>
+					  &ensp;&ensp;&ensp;
+					  <span class="prompt-sweep-bracket"><span class="prompt-sweep-button_c">a stag</span> <br> <span class="prompt-sweep-button_c">a toy stag</span> <br> <span class="prompt-sweep-button_c">an origami stag</span> <br> <span class="prompt-sweep-button_c">a ghost stag</span></span>
+					  </div>
+				  </div> 
+				  <img class="prompt-sweep-img" id="prompt-sweep-img" src="./files/prompt_switch/default.png"> -->
+			<!-- </center> -->
+		</tr>
 	</table>
 	<table align=center width=400px>
 		<tr>
