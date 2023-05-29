@@ -64,6 +64,19 @@
 		font-size: 22px;
 	}
 
+	.cssFont_1 {
+		font-family: Times New Roman;
+		font-size: 20px;
+		letter-spacing: 0px;
+		word-spacing: 0px;
+		color: #000000;
+		font-weight: normal;
+		text-decoration: none;
+		font-style: oblique;
+		font-variant: normal;
+		text-transform: none;
+	}
+
 	.layered-paper-big {
 		/* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
 		box-shadow:
@@ -341,7 +354,9 @@
 		<center>
 			<tr>
 				<td>
-					Short description if wanted
+					DiffSketcher generates free-hand sketches from a text prompt such as <i>"A photo of Eiffel Tower"</i>.
+To synthesize a sketch that matches the given text prompt, we optimize the parameters of the differentiable rasterizer <span class="cssFont_1">R</span> that produces the raster sketch <span class="cssFont_1">S</span>, such that the resulting sketch is close to a sample from the frozen latent diffusion model (the blue part of the picture). 
+Since the diffusion model directly predicts the update direction, we do not need to backpropagate through the diffusion model; the model simply acts like an efficient, frozen critic that predicts image-space edits.
 				</td>
 			</tr>
 		</center>
