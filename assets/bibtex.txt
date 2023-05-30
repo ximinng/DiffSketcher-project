@@ -1,6 +1,6 @@
-@inproceedings{invbyinv_2023,
-  title={Inversion-by-Inversion: Exemplar-based Sketch-to-Photo Synthesis via Stochastic Differential Equations},
-  author={Author, First and Author, Second and Author, Third},
+@inproceedings{DiffSketcher_2023,
+  title={DiffSketcher: Text Guided Vector Sketch Synthesis through Latent Diffusion Models},
+  author={XiMing Xing, Qian Yu, Chuang Wang, HaiTao Zhou, Dong Xu, Jing Zhang},
   booktitle={ArXiv},
   year={2023}
 }
