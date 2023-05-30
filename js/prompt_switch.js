@@ -11,8 +11,8 @@ function changeImage(i){
     // console.log("t"+prompts_parts[i][0].innerHTML)
     // console.log()
     // console.log("./files/" + prompts_parts[i][0].innerHTML.replace(' ','')+".png")
-    console.log("./files/" +i.toString()+".gif")
-    image.src = "./files/" +i.toString()+".gif"
+    // console.log("./files/" +i.toString()+".gif")
+    image.src = "./assets/" +i.toString()+".gif"
     console.log(image.src)
 }
 

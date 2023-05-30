@@ -1,314 +1,130 @@
-<script src="http://www.google.com/jsapi" type="text/javascript"></script>
-<script type="text/javascript">google.load("jquery", "1.3.2");</script>
-<script type="text/javascript" src="./files/prompt_switch.js"></script>
-<style type="text/css">
-	body {
-		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-		font-weight: 300;
-		font-size: 18px;
-		margin-left: auto;
-		margin-right: auto;
-		width: 1100px;
-	}
-
-	h1 {
-		font-size: 32px;
-		font-weight: 300;
-	}
-
-	.disclaimerbox {
-		background-color: #eee;
-		border: 1px solid #eeeeee;
-		border-radius: 10px;
-		-moz-border-radius: 10px;
-		-webkit-border-radius: 10px;
-		padding: 20px;
-	}
-
-	video.header-vid {
-		height: 140px;
-		border: 1px solid black;
-		border-radius: 10px;
-		-moz-border-radius: 10px;
-		-webkit-border-radius: 10px;
-	}
-
-	img.header-img {
-		height: 140px;
-		border: 1px solid black;
-		border-radius: 10px;
-		-moz-border-radius: 10px;
-		-webkit-border-radius: 10px;
-	}
-
-	img.rounded {
-		border: 1px solid #eeeeee;
-		border-radius: 10px;
-		-moz-border-radius: 10px;
-		-webkit-border-radius: 10px;
-	}
-
-	a:link,
-	a:visited {
-		color: #1367a7;
-		text-decoration: none;
-	}
-
-	a:hover {
-		color: #208799;
-	}
-
-	td.dl-link {
-		height: 160px;
-		text-align: center;
-		font-size: 22px;
-	}
-
-	.cssFont_1 {
-		font-family: Times New Roman;
-		font-size: 20px;
-		letter-spacing: 0px;
-		word-spacing: 0px;
-		color: #000000;
-		font-weight: normal;
-		text-decoration: none;
-		font-style: oblique;
-		font-variant: normal;
-		text-transform: none;
-	}
-
-	.layered-paper-big {
-		/* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
-		box-shadow:
-			0px 0px 1px 1px rgba(0, 0, 0, 0.35),
-			/* The top layer shadow */
-			5px 5px 0 0px #fff,
-			/* The second layer */
-			5px 5px 1px 1px rgba(0, 0, 0, 0.35),
-			/* The second layer shadow */
-			10px 10px 0 0px #fff,
-			/* The third layer */
-			10px 10px 1px 1px rgba(0, 0, 0, 0.35),
-			/* The third layer shadow */
-			15px 15px 0 0px #fff,
-			/* The fourth layer */
-			15px 15px 1px 1px rgba(0, 0, 0, 0.35),
-			/* The fourth layer shadow */
-			20px 20px 0 0px #fff,
-			/* The fifth layer */
-			20px 20px 1px 1px rgba(0, 0, 0, 0.35),
-			/* The fifth layer shadow */
-			25px 25px 0 0px #fff,
-			/* The fifth layer */
-			25px 25px 1px 1px rgba(0, 0, 0, 0.35);
-		/* The fifth layer shadow */
-		margin-left: 10px;
-		margin-right: 45px;
-	}
-
-	.paper-big {
-		/* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
-		box-shadow:
-			0px 0px 1px 1px rgba(0, 0, 0, 0.35);
-		/* The top layer shadow */
-
-		margin-left: 10px;
-		margin-right: 45px;
-	}
-
-
-	.layered-paper {
-		/* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
-		box-shadow:
-			0px 0px 1px 1px rgba(0, 0, 0, 0.35),
-			/* The top layer shadow */
-			5px 5px 0 0px #fff,
-			/* The second layer */
-			5px 5px 1px 1px rgba(0, 0, 0, 0.35),
-			/* The second layer shadow */
-			10px 10px 0 0px #fff,
-			/* The third layer */
-			10px 10px 1px 1px rgba(0, 0, 0, 0.35);
-		/* The third layer shadow */
-		margin-top: 5px;
-		margin-left: 10px;
-		margin-right: 30px;
-		margin-bottom: 5px;
-	}
-
-	.vert-cent {
-		position: relative;
-		top: 50%;
-		transform: translateY(-50%);
-	}
-
-	hr {
-		border: 0;
-		height: 1px;
-		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-	}
-
-	.prompt-sweep-text {
-		float: right;
-		font-size: 20px;
-		width: 40%;
-		margin-left: 5%;
-		margin-right: auto;
-	}
-
-	.prompt-sweep-text {
-		float: right;
-		font-size: 20px;
-		width: 40%;
-		margin-left: 5%;
-		margin-right: auto;
-	}
-
-	.prompt-sweep-img {
-		/*vertical-align: middle;*/
-		/*vertical-align: middle;*/
-		width: 40%;
-		/*flex-basis: 40%*/
-		float: right;
-		/* margin-left: auto;
-		margin-right: auto; */
-	}
-
-	.prompt-sweep-bracket {
-		color: #00000090;
-		font-size: 20px;
-		float: left;
-		margin-left: 100px;
-	}
-
-	.prompt-sweep-bracket_1 {
-		color: #00000090;
-		font-size: 20px;
-		float: left;
-		margin-left: 100px;
-	}
-</style>
-
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
-	<title>DiffSketcher: Text Guided Vector Sketch Synthesis through Latent Diffusion Models
-	</title>
-	<meta property="og:image" content="Path to my teaser.png" />
-	<!-- Facebook automatically scrapes this. Go to https://developers.facebook.com/tools/debug/ if you update and want to force Facebook to rescrape. -->
-	<meta property="og:title"
-		content="DiffSketcher: Text Guided Vector Sketch Synthesis through Latent Diffusion Models" />
-	<meta property="og:description" content="DiffSketcher" />
+    <!--Include Bootstrap’s JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+            crossorigin="anonymous"></script>
+    <!-- Custom JS for this template -->
+    <script src="js/copyText.js"></script>
+    <script type="text/javascript" src="./js/prompt_switch.js"></script>
+    <!--Include Latex (optional)-->
+    <!--<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>-->
+    <!--<script type="text/x-mathjax-config">-->
+    <!--    MathJax.Hub.Config({-->
+    <!--        tex2jax: {inlineMath: [['$', '$']]},-->
+    <!--        messageStyle: "none"-->
+    <!--    });-->
+    <!--</script>-->
 
-	<!-- Get from Google Analytics -->
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src=""></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
+    <!-- Include the icon fonts stylesheet-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!--Include Bootstrap’s CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+          crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="style.css" rel="stylesheet">
 
-		gtag('config', 'UA-75863369-6');
-	</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DiffSketcher: Text Guided Vector Sketch Synthesis through Latent Diffusion Models</title>
+    <meta property="og:description" content="Paper description."/>
 </head>
 
 <body>
-	<br>
-	<center>
-		<span style="font-size:36px">DiffSketcher: Text Guided Vector Sketch Synthesis through Latent Diffusion
-			Models</span>
-		<div>&nbsp;</div>
-		<table align=center width=1000px>
-			<table align=center width=1000px>
-				<tr>
-					<td align=center width=80px>
-						<center>
-							<span style="font-size:24px"><a href="">XiMing Xing</a></span>
-						</center>
-					</td>
-					<td align=center width=100px>
-						<center>
-							<span style="font-size:24px"><a href="">Qian Yu</a></span>
-						</center>
-					</td>
-					<td align=center width=80px>
-						<center>
-							<span style="font-size:24px"><a href="">Chuang Wang</a></span>
-						</center>
-					</td>
-					<td align=center width=80px>
-						<center>
-							<span style="font-size:24px"><a href="">HaiTao Zhou</a></span>
-						</center>
-					</td>
-				</tr>
+<header class="container">
+    <!-- Paper Title -->
+    <div class="container text-center">
+        <a class="blog-header-logo text-body-emphasis" href="#">DiffSketcher: Text Guided Vector Sketch Synthesis through Latent Diffusion Models</a>
+    </div>
+    <hr>
+    <!-- author list -->
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+                <p class="fs-5"><a href="https://ximinng.github.io/" class="link-body-emphasis">Ximing
+                    Xing</a><sup>1</sup></p>
+            </div>
+            <div class="col"><p class="fs-5">Chuang Wang<sup>1</sup></p></div>
+            <div class="col"><p class="fs-5">Haitao Zhou<sup>1</sup></p></div>
+            <div class="col"><p class="fs-5">ZhiHao Hu<sup>1</sup></p></div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p class="fs-5"><a href="https://yuqian1023.github.io/" class="link-body-emphasis">Qian
+                    Yu</a><sup>1</sup></p>
+            </div>
+            <div class="col">
+                <p class="fs-5"><a href="https://zhenxuan00.github.io/"
+                                   class="link-body-emphasis">ChongXuanLi</a><sup>2</sup></p>
+            </div>
+            <div class="col"><p class="fs-5">Dong Xu<sup>3</sup></p></div>
+        </div>
+    </div>
+    <!-- author organization -->
+    <div class="text-center">
+        <p class="fs-6">
+            <sup>1</sup>Beihang University
+            &nbsp;&nbsp;<sup>2</sup>Renmin University of China
+            &nbsp;&nbsp;<sup>3</sup>The University of Hong Kong</p>
+        </p>
+    </div>
+    <!-- paper status -->
+    <div class="text-center">
+        <h3>Paper status - Under Review</h3>
+    </div>
+    <!-- links -->
+    <div class="text-center">
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-3">
+                <!-- more svg icon can bre found in:  https://icons.getbootstrap.com/?q=github -->
+                <a class="icon-link icon-link-hover" style="--bs-icon-link-transform: translate3d(0, -.125rem, 0);"
+                   href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-newspaper" viewBox="0 0 16 16">
+                        <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5v-11zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5H12z"/>
+                        <path d="M2 3h10v2H2V3zm0 3h4v3H2V6zm0 4h4v1H2v-1zm0 2h4v1H2v-1zm5-6h2v1H7V6zm3 0h2v1h-2V6zM7 8h2v1H7V8zm3 0h2v1h-2V8zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1z"/>
+                    </svg>
+                    <h3>Paper</h3>
+                </a>
+            </div>
+            <div class="col col-lg-3">
+                <a class="icon-link icon-link-hover" style="--bs-icon-link-transform: translate3d(0, -.125rem, 0);"
+                   href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-github" viewBox="0 0 16 16">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                    </svg>
+                    <h3>Code</h3>
+                </a>
+                (Coming Soon)
+            </div>
+        </div>
+    </div>
+    <br>
 
-			</table>
+    <!-- teaser -->
+    <div class="text-center">
+        <figure class="figure">
+            <img src="./assets/teaser.png" class="img-thumbnail figure-img img-fluid rounded" alt="teaser" style="width:1000px">
+            <figcaption class="figure-caption" style="font-size:16px; width: 1000px;">
+                Visualizations of the vector sketches generated by our proposed method, DiffSketcher. For each example, we show two sketches with a different number of strokes.
+            </figcaption>
+        </figure>
+    </div>
 
-			<table align=center width=500px>
-				<tr>
-					<td align=center width=100px>
-						<center>
-							<span style="font-size:24px"><a href="">Dong Xu</a></span>
-						</center>
-					</td>
-					<td align=center width=100px>
-						<center>
-							<span style="font-size:24px"><a href="">Jing Zhang</a></span>
-						</center>
-					</td>
-				</tr>	
-			</table>
+</header>
+<br>
 
-
-			<table align=center width=500px>
-				<tr>
-					<td align=center width=240px>
-						<center>
-							<span style="font-size:24px"><a href=''>[Paper] <span style="font-size:20px">Coming soon</span></a></span>
-						</center>
-					</td>
-					<td align=center width=240px>
-						<center>
-							<span style="font-size:24px"><a
-									href='https://github.com/ximinng/inversion-by-inversion-pytorch'>[Code] <span style="font-size:20px">Coming soon</span> </a></span><br>
-						</center>
-					</td>
-				</tr>
-			</table>
-		</table>
-	</center>
-
-	<div>&nbsp;</div>
-
-	<center>
-		<table align=center width=1200px>
-			<tr>
-				<td width=1200px>
-					<center>
-						<img class="round" style="width: 1000px;" src="./resources/teaser.png" />
-					</center>
-				</td>
-			</tr>
-		</table>
-		<table align=center width=850px>
-			<tr>
-				<td>
-Visualizations of the vector sketches generated by our proposed method, DiffSketcher. For each example, we show two sketches with a different number of strokes.
-				</td>
-			</tr>
-		</table>
-	</center>
-
-	<hr>
-
-	<table align=center width=850px>
-		<center>
-			<h1>Abstract</h1>
-		</center>
-		<tr>
-			<td>
-				Even trained mainly on images, we discover that pretrained diffusion models show impressive power in
+<main class="container">
+    <!-- Abstract -->
+    <div class="card" style="width:1000px; margin:0 auto;">
+        <div class="card-body">
+            <h2 class="card-title text-center card-title-margin">Abstract</h2>
+            <p class="card-text">
+                Even trained mainly on images, we discover that pretrained diffusion models show impressive power in
 				guiding sketch synthesis.
 				In this paper, we present DiffSketcher, an innovative algorithm that creates <i>vectorized</i> free-hand
 				sketches using natural language input.
@@ -322,172 +138,223 @@ Visualizations of the vector sketches generated by our proposed method, DiffSket
 				The generated sketches demonstrate multiple levels of abstraction while maintaining recognizability,
 				underlying structure, and essential visual details of the subject drawn. Our experiments show that
 				DiffSketcher achieves greater quality than prior work.
-			</td>
-		</tr>
-	</table>
-	<br>
+            </p>
+        </div>
+    </div>
+    <br>
 
-	<hr>
-	<table align=center width=400px>
-		<center>
-			<h1>Method</h1>
-		</center>
-		<tr>
-			<td align=center width=400px>
-				<center>
-					<!-- <td><img class="round" style="width:450px" src="./resources/method_diagram.pdf"/></td> -->
-					<!-- <td><iframe src="./resources/method_diagram.pdf" height="900px;" width="800px"></iframe></td> -->
-					<img src="./files/method.png" alt="" style="width:800px">
-				</center>
-			</td>
-		</tr>
-	</table>
-	<table align=center width=850px>
-		<center>
-			<tr>
-				<td>
-					DiffSketcher generates free-hand sketches from a text prompt such as <i>"A photo of Eiffel Tower"</i>.
+    <!-- Online Demo -->
+    <!--    <div class="card">-->
+    <!--        <div class="card-body">-->
+    <!--            <h2 class="card-title card-title-margin">Online Demo</h2>-->
+    <!--            <p class="card-text">-->
+    <!--                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo-->
+    <!--                dapibus sit amet. Suspendisse condimentum, libero vel tempus mattis, risus risus vulputate libero,-->
+    <!--                elementum fermentum mi neque vel nisl. Maecenas facilisis maximus dignissim. Curabitur mattis vulputate-->
+    <!--                dui, tincidunt varius libero luctus eu. Mauris mauris nulla, scelerisque eget massa id, tincidunt congue-->
+    <!--                felis. Sed convallis tempor ipsum rhoncus viverra. Pellentesque nulla orci, accumsan volutpat fringilla-->
+    <!--                vitae, maximus sit amet tortor. Aliquam ultricies odio ut volutpat scelerisque. Donec nisl nisl,-->
+    <!--                porttitor vitae pharetra quis, fringilla sed mi. Fusce pretium dolor ut aliquam consequat. Cras-->
+    <!--                volutpat, tellus accumsan mattis molestie, nisl lacus tempus massa, nec malesuada tortor leo vel quam.-->
+    <!--                Aliquam vel ex consectetur, vehicula leo nec, efficitur eros. Donec convallis non urna quis feugiat.-->
+    <!--            </p>-->
+    <!--            <div class="text-center">-->
+    <!--                <figure class="figure">-->
+    <!--                    <img src="./assets/method_diagram.png" class="figure-img img-fluid rounded" alt="...">-->
+    <!--                    <figcaption class="figure-caption">A caption for the above image.</figcaption>-->
+    <!--                </figure>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--    <br>-->
+
+    <!-- Methodology -->
+    <div class="card" style="width:1000px; margin:0 auto;">
+        <div class="card-body" >
+            <h2 class="card-title card-title-margin">Methodology</h2>
+            <div class="text-center">
+                <figure class="figure">
+                    <img src="./assets/method.png" class="figure-img img-fluid rounded" alt="method">
+                    <!--                    <figcaption class="figure-caption">A caption for the above image.</figcaption>-->
+                </figure>
+            </div>
+            <p class="card-text">
+                DiffSketcher generates free-hand sketches from a text prompt such as <i>"A photo of Eiffel Tower"</i>.
 To synthesize a sketch that matches the given text prompt, we optimize the parameters of the differentiable rasterizer <span class="cssFont_1">R</span> that produces the raster sketch <span class="cssFont_1">S</span>, such that the resulting sketch is close to a sample from the frozen latent diffusion model (the blue part of the picture). 
 Since the diffusion model directly predicts the update direction, we do not need to backpropagate through the diffusion model; the model simply acts like an efficient, frozen critic that predicts image-space edits.
-				</td>
-			</tr>
-		</center>
-	</table>
+            </p>
+        </div>
+    </div>
+    <br>
 
-	<hr>
-	<!-- <center>
-		<h1>Talk</h1>
-	</center>
+    <!-- Experiments -->
+<!--    <div class="card">-->
+<!--        <div class="card-body">-->
+<!--            <h2 class="card-title card-title-margin">Experiments</h2>-->
+<!--            <p class="card-text">-->
+<!--                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo-->
+<!--                dapibus sit amet. Suspendisse condimentum, libero vel tempus mattis, risus risus vulputate libero,-->
+<!--                elementum fermentum mi neque vel nisl. Maecenas facilisis maximus dignissim. Curabitur mattis vulputate-->
+<!--                dui, tincidunt varius libero luctus eu. Mauris mauris nulla, scelerisque eget massa id, tincidunt congue-->
+<!--                felis. Sed convallis tempor ipsum rhoncus viverra. Pellentesque nulla orci, accumsan volutpat fringilla-->
+<!--                vitae, maximus sit amet tortor. Aliquam ultricies odio ut volutpat scelerisque. Donec nisl nisl,-->
+<!--                porttitor vitae pharetra quis, fringilla sed mi. Fusce pretium dolor ut aliquam consequat. Cras-->
+<!--                volutpat, tellus accumsan mattis molestie, nisl lacus tempus massa, nec malesuada tortor leo vel quam.-->
+<!--                Aliquam vel ex consectetur, vehicula leo nec, efficitur eros. Donec convallis non urna quis feugiat.-->
+<!--            </p>-->
+<!--            <br>-->
 
+<!--            &lt;!&ndash; Table example &ndash;&gt;-->
+<!--            <table class="table">-->
+<!--                <thead>-->
+<!--                <tr class="table-primary">-->
+<!--                    <th scope="col">#</th>-->
+<!--                    <th scope="col">First</th>-->
+<!--                    <th scope="col">Last</th>-->
+<!--                    <th scope="col">Handle</th>-->
+<!--                </tr>-->
+<!--                </thead>-->
+<!--                <tbody class="table-group-divider">-->
+<!--                <tr>-->
+<!--                    <th scope="row">1</th>-->
+<!--                    <td>Mark</td>-->
+<!--                    <td>Otto</td>-->
+<!--                    <td>@mdo</td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <th scope="row">2</th>-->
+<!--                    <td>Jacob</td>-->
+<!--                    <td>Thornton</td>-->
+<!--                    <td>@fat</td>-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                    <th scope="row">3</th>-->
+<!--                    <td colspan="2">Larry the Bird</td>-->
+<!--                    <td>@twitter</td>-->
+<!--                </tr>-->
+<!--                </tbody>-->
+<!--            </table>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <br>-->
 
-	<table align=center width=800px>
-		<br>
-		<tr>
-			<center>
-				<span style="font-size:28px"><a href=''>[Slides]</a>
-				</span>
-			</center>
-		</tr>
-	</table>
-	<hr> -->
+    <!-- Supplementary Material -->
+<!--    <div class="card">-->
+<!--        <div class="card-body">-->
+<!--            <h2 class="card-title card-title-margin">Supplementary Material</h2>-->
+<!--            <p class="card-text">-->
+<!--                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo-->
+<!--                dapibus sit amet.-->
+<!--            </p>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <br>-->
 
+<!-- Results -->
+    
+    <div class="card" style="width:1000px; margin:0 auto;">
+        <div class="card-body">
+            <h2 class="card-title card-title-margin">Results</h2>
+            <div>
+                <div class="prompt-sweep-bracket">
+                    <div style="margin-left:-20px">Prompt:</div>
 
-	<center>
-		<h1>Results</h1>
-	</center>
-	<table align=center width=800px>
-		<div>
-			<div class="prompt-sweep-bracket">
-				<div style="margin-left:-20px">Prompt:</div>
+                    <br>
+                    <div>
+                        <span class="prompt-sweep-button_a">Macaw full color, ultra detailed, realistic, <br> insanely
+                            beautiful</span>
+                    </div>
+                    <br>
+                    <div>
+                        <span class="prompt-sweep-button_b">Very detailed masterpiece painting of baby <br>yoda hoding a
+                            lightsaber</span>
+                    </div>
+                    <br>
+                    <div>
+                        <span class="prompt-sweep-button_c">Sailboat sailing in the sea on a clear day</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="prompt-sweep-bracket_1">
+                        <span>Sketch: &nbsp;&nbsp;</span>
+                    </div>
 
-				<br>
-				<div>
-					<span class="prompt-sweep-button_a">Macaw full color, ultra detailed, realistic, <br> insanely
-						beautiful</span>
-				</div>
-				<br>
-				<div>
-					<span class="prompt-sweep-button_b">Very detailed masterpiece painting of baby <br>yoda hoding a
-						lightsaber</span>
-				</div>
-				<br>
-				<div>
-					<span class="prompt-sweep-button_c">Sailboat sailing in the sea on a clear day</span>
-				</div>
-			</div>
-			<div>
-				<div class="prompt-sweep-bracket_1">
-					<span>Sketch: &nbsp;&nbsp;</span>
-				</div>
+                    <img id="prompt-sweep-img" src="./assets/0.gif" style="width: 300px;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <!-- Citation -->
+    <div class="card" style="width:1000px; margin:0 auto;">
+        <div class="card-body">
+            <h2 class="card-title card-title-margin">Citation</h2>
+            <p id="bibtex" class="card-text" style="border: #1a1c20 1px">
+                <code> @article{author20XXtitle,<br>
+                    &nbsp;&nbsp;title={DiffSketcher: Text Guided Vector Sketch Synthesis through Latent Diffusion Models},<br>
+                    &nbsp;&nbsp;author={Ximing xing, and Chuang Wang, and Haitao Zhou, and ZhiHao Hu and Qian Yu and
+                    ChongXuan Li and Dong Xu},<br>
+                    &nbsp;&nbsp;booktitle={arXiv preprint},<br>
+                    &nbsp;&nbsp;year={2023}<br>
+                    }
+                </code>
+            </p>
 
-				<img id="prompt-sweep-img" src="./files/0.gif" style="width: 300px;">
-			</div>
-		</div>
-		<br>
-	</table>
-	<br>
-	<br>
-	<br>
+            <!-- Bibtex (Button trigger modal)-->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                    onclick="copyText()">
+                Copy BibTex
+            </button>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Bibtex</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="bibtex modal-body">
+                            Copy Success!
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    
+   
+    <!-- Acknowledgements -->
+    <!--    <div class="card">-->
+    <!--        <div class="card-body">-->
+    <!--            <h4 class="card-title card-title-margin">Acknowledgements</h4>-->
+    <!--            <p class="card-text">We thank Ximing Xing for providing us with the source code of the web page to help us-->
+    <!--                build the project home page.</p>-->
+    <!--        </div>-->
+    <!--    </div>-->
+    <!--    <br>-->
 
-	<hr>
-	<center>
-		<font size="+2">
-			<p style="text-align: center;">
-			  <!-- <a href="./files/sketch-guided-preprint.pdf" target="_blank">Paper</a> &nbsp;&nbsp;&nbsp;&nbsp; -->
-			  <a>Online Demo <span style="font-size: 14px;">(Coming Soon)</a>
-			</p>
-		  </font>
-		<!-- <a>Code <span style="font-size: 14px;">(Coming Soon)</a> -->
-	</center>
+</main>
 
-	<table align=center width=420px>
-		<center>
-			<tr>
-				<td>
-				</td>
-			</tr>
-		</center>
-	</table>
+<footer class="container blog-footer" style="width:1000px; margin:0 auto;">
+    <p>
+        This webpage template was originally made by
+        <a href="https://github.com/ximinng"
+           class="link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Ximing Xing</a>.
+    </p>
+    <div class="container">
+        <div class="badge bg-primary text-wrap">
+            <p>
+                <a href="#" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+                    Back to top
+                </a>
+            </p>
+        </div>
+    </div>
+</footer>
 
-	<!-- <table align=center width=800px>
-		<br>
-		<tr>
-			<center>
-				<span style="font-size:28px">&nbsp;<a href='https://github.com/richzhang/webpage-template'>[GitHub]</a>
-			</center>
-			</span>
-	</table> -->
-	<br>
-	<hr>
-	<table align=center width=450px>
-		<center>
-			<h1>Paper and Supplementary Material</h1>
-		</center>
-		<tr>
-			<td><a href=""><img class="layered-paper-big" style="height:175px" src="./resources/paper.png" /></a></td>
-			<td>
-					<b>DiffSketcher: Text Guided Vector Sketch Synthesis through Latent Diffusion
-						Models</b><br>
-					In Conference, 2023.<br>
-					(hosted on <a href="">ArXiv</a>)<br>
-					<!-- (<a href="./resources/camera-ready.pdf">camera ready</a>)<br> -->
-					<span style="font-size:4pt"><a href=""><br></a>
-					</span>
-			</td>
-		</tr>
-	</table>
-	<br>
-
-	<table align=center width=600px>
-		<tr>
-			<td><span style="font-size:14pt">
-					<center>
-						<a href="./resources/bibtex.txt">[Bibtex]</a>
-					</center>
-			</td>
-		</tr>
-	</table>
-
-	<hr>
-	<br>
-
-	<table align=center width=900px>
-		<tr>
-			<td width=400px>
-				<left>
-					<center>
-						<h1>Acknowledgements</h1>
-					</center>
-					This template was originally made by <a href="http://web.mit.edu/phillipi/">Phillip Isola</a> and <a
-						href="http://richzhang.github.io/">Richard Zhang</a> for a <a
-						href="http://richzhang.github.io/colorization/">colorful</a> ECCV project; the code can be found
-					<a href="https://github.com/richzhang/webpage-template">here</a>.
-				</left>
-			</td>
-		</tr>
-	</table>
-
-	<br>
 </body>
-
 </html>
