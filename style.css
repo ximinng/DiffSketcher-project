@@ -14,15 +14,22 @@
     text-decoration: none;
 }
 
+.body-hr {
+    margin-top: -1em;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 3px solid cornflowerblue;
+}
+
 /*
  * Body
  */
 .card-title-margin {
-margin-bottom: 0.7em;
+    margin-bottom: 0.7em;
 }
 
 a {
-  color: cornflowerblue;
+    color: cornflowerblue;
 }
 
 /*
@@ -80,6 +87,7 @@ a {
     float: left;
     margin-left: 100px;
 }
+
 .cssFont_1 {
     font-family: Times New Roman;
     font-size: 20px;
