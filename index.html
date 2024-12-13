@@ -24,16 +24,23 @@
           rel="stylesheet"
           integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
           crossorigin="anonymous">
+    <!--Local Icon-->
+    <link rel="stylesheet" href="icons/style.css">
+    <!--Local Fonts-->
+    <link rel="stylesheet" href="fonts/avenir-next/stylesheet.css">
+    <link rel="stylesheet" href="fonts/segoe-print/stylesheet.css">
     <!-- Custom styles for this template -->
-    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <title>DiffSketcher: Text Guided Vector Sketch Synthesis through Latent Diffusion Models</title>
     <!-- The description that appears when you share the link -->
-    <meta property="og:description" content="SVGDreamer: Text Guided SVG Generation with Diffusion Model"/>
+    <meta property="og:description"
+          content="DiffSketcher: Text Guided Vector Sketch Synthesis through Latent Diffusion Models"/>
     <!-- Used to display page descriptions in search results -->
-    <meta name="description" content="DiffSketcher, text-to-sketch, text2sketch ,text-to-svg, text2svg">
+    <meta name="description" content="DiffSketcher, text-to-sketch, text2sketch, text-to-svg, text2svg, vector sketch">
     <!-- favicon -->
     <link rel="icon" href="assets/favicon.svg" type="image/x-icon">
 </head>
@@ -43,84 +50,56 @@
     <hr>
     <!-- Paper Title -->
     <div class="container text-center">
-        <span class="blog-header-logo project_name_1">DiffSketcher:</span>
-        <a class="blog-header-logo text-body-emphasis" href="https://arxiv.org/abs/2306.14685">
-            Text Guided Vector Sketch Synthesis through Latent Diffusion Models
-        </a>
+        <span class="title-font x-gradient-font">SDiffSketcher: Text Guided Vector Sketch Synthesis through Latent Diffusion Models</span>
     </div>
     <hr>
     <!-- author list -->
-    <div class="container text-center">
-        <div class="row">
-            <div class="col">
-                <p class="fs-5"><a href="https://ximinng.github.io//"
-                                   class="link-body-emphasis">Ximing Xing</a><sup>1</sup></p>
+    <div class="container author text-center">
+        <!-- authors -->
+        <div class="row gy-2">
+            <div class="col-12 col-md-2">
+                <a class="link" href="https://ximinng.github.io">Ximing Xing</a><sup>1</sup>
             </div>
-            <div class="col"><p class="fs-5">Chuang Wang<sup>1</sup></p></div>
-            <div class="col"><p class="fs-5">Haitao Zhou<sup>1</sup></p></div>
+            <div class="col-12 col-md-2">Chuang Wang<sup>1</sup></div>
+            <div class="col-12 col-md-2">Haitao Zhou<sup>1</sup></div>
+            <div class="col-12 col-md-2">
+                <a class="link" href="https://hellojing89.github.io">Jing Zhang</a><sup>1</sup>
+            </div>
+            <div class="col-12 col-md-2">
+                <a class="link" href="https://www.cs.hku.hk/people/academic-staff/dongxu">Dong Xu</a><sup>2</sup>
+            </div>
+            <div class="col-12 col-md-2">
+                <a class="link" href="https://yuqian1023.github.io">Qian Yu</a><sup>1</sup>
+            </div>
         </div>
-        <div class="row">
-            <div class="col">
-                <p class="fs-5"><a href="https://hellojing89.github.io/"
-                                   class="link-body-emphasis">Jing Zhang</a><sup>1</sup></p>
+        <!-- author organization -->
+        <div class="row mt-3">
+            <div class="col-12">
+                <sup>1</sup>Beihang University &nbsp;&nbsp;<sup>2</sup>The University of Hong Kong
             </div>
-            <div class="col">
-                <p class="fs-5"><a href="https://yuqian1023.github.io/" class="link-body-emphasis">Qian
-                    Yu</a><sup>1</sup><sup>*</sup></p>
-            </div>
-            <div class="col"><p class="fs-5">
-                <a href="https://www.cs.hku.hk/index.php/people/academic-staff/dongxu" class="link-body-emphasis">Dong
-                    Xu</a><sup>2</sup></p></div>
         </div>
-    </div>
-    <!-- author organization -->
-    <div class="text-center">
-        <p class="fs-6">
-            <sup>1</sup>Beihang University &nbsp;&nbsp;
-            <sup>2</sup>The University of Hong Kong
-            <br/>
-            <sup>*</sup>Corresponding author
-        </p>
     </div>
 
     <!-- paper status -->
-    <div class="text-center">
-        <h3>Paper status - Accepted by NIPS 2023 🎉🎉🎉</h3>
+    <div class="text-center" style="margin-top: 20px; font-size: 30px; font-weight: 500;">
+        Paper status - Accepted by NIPS 2023 🎉🎉🎉
     </div>
     <!-- links -->
     <div class="text-center">
         <div class="row justify-content-md-center">
-            <div class="col col-lg-3">
-                <!-- more svg icon can bre found in:  https://icons.getbootstrap.com/?q=github -->
-                <a class="icon-link icon-link-hover" style="--bs-icon-link-transform: translate3d(0, -.125rem, 0);"
-                   href="https://arxiv.org/abs/2306.14685">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                         class="bi bi-newspaper" viewBox="0 0 16 16">
-                        <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5v-11zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5H12z"/>
-                        <path d="M2 3h10v2H2V3zm0 3h4v3H2V6zm0 4h4v1H2v-1zm0 2h4v1H2v-1zm5-6h2v1H7V6zm3 0h2v1h-2V6zM7 8h2v1H7V8zm3 0h2v1h-2V8zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1z"/>
-                    </svg>
-                    <h3>Paper</h3>
-                </a>
-            </div>
-            <div class="col col-lg-3">
-                <a class="icon-link icon-link-hover" style="--bs-icon-link-transform: translate3d(0, -.125rem, 0);"
-                   href="https://github.com/ximinng/DiffSketcher">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                         class="bi bi-github" viewBox="0 0 16 16">
-                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-                    </svg>
-                    <h3>Code</h3>
-                </a>
-            </div>
-            <div class="col col-lg-3">
-                <a class="icon-link icon-link-hover" style="--bs-icon-link-transform: translate3d(0, -.125rem, 0);"
-                   href="https://ximinng.github.io/PyTorch-SVGRender-project/">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                         class="bi bi-github" viewBox="0 0 16 16">
-                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-                    </svg>
-                    <h3>Pytorch-SVGRender</h3>
-                </a>
+            <div id="links">
+                <div class="col col-lg-2">
+                    <a id="arxiv" href="https://arxiv.org/abs/2306.14685">Paper</a>
+                </div>
+                <div class="col col-lg-2">
+                    <a id="code" href="https://github.com/ximinng/DiffSketcher">Code</a>
+                </div>
+                <div class="col col-lg-2">
+                    <a id="demo" href="https://huggingface.co/spaces/SVGRender/DiffSketcher">Demo</a>
+                </div>
+                <div class="col col-lg-2">
+                    <a id="code" href="https://github.com/ximinng/PyTorch-SVGRender">Render</a>
+                </div>
             </div>
         </div>
     </div>
@@ -129,12 +108,9 @@
     <!-- teaser -->
     <div class="text-center">
         <figure class="figure">
-            <img src="./assets/teaser.png" class="img-thumbnail figure-img img-fluid rounded" alt="teaser"
-                 style="width:1000px">
-            <figcaption class="figure-caption" style="font-size:16px; width: 1000px;">
-                Visualizations of the vector sketches generated by our proposed method, DiffSketcher. For each example,
-                we show two sketches with a different number of strokes.
-            </figcaption>
+            <img src="./assets/teaser.png" class="figure-img img-fluid rounded"
+                 width="80%" height="auto"
+                 alt="DiffSketcher teaser">
         </figure>
     </div>
 
@@ -143,21 +119,21 @@
 
 <main class="container">
     <!-- Abstract -->
-    <div class="card" style="width:1000px; margin:0 auto;">
-        <div class="card-body">
+    <div class="card border-0">
+        <div class="card-body x-gradient-block">
             <h2 class="card-title text-center card-title-margin">Abstract</h2>
             <p class="card-text">
                 Even trained mainly on images, we discover that pretrained diffusion models show impressive power in
                 guiding sketch synthesis.
-                In this paper, we present DiffSketcher, an innovative algorithm that creates <i>vectorized</i> free-hand
-                sketches using natural language input.
+                In this paper, we present DiffSketcher, an innovative algorithm that creates <b><i>vectorized free-hand
+                sketches</i></b> using natural language input.
                 DiffSketcher is developed based on a pre-trained text-to-image diffusion model. It performs the task by
-                directly optimizing a set of Bézier curves with an extended version of the score distillation sampling
-                (SDS) loss,
+                directly optimizing a set of Bézier curves with <b>an extended version of the score distillation sampling
+                (SDS) loss</b>,
                 which allows us to use a raster-level diffusion model as a prior for optimizing a parametric vectorized
                 sketch generator.
-                Furthermore, we explore attention maps embedded in the diffusion model for effective stroke
-                initialization to speed up the generation process.
+                Furthermore, we explore attention maps embedded in the diffusion model for <b>effective stroke
+                initialization</b> to speed up the generation process.
                 The generated sketches demonstrate multiple levels of abstraction while maintaining recognizability,
                 underlying structure, and essential visual details of the subject drawn. Our experiments show that
                 DiffSketcher achieves greater quality than prior work.
@@ -167,7 +143,7 @@
     <br>
 
     <!-- Methodology -->
-    <div class="card" style="width:1000px; margin:0 auto;">
+    <div class="card border-0">
         <div class="card-body">
             <h2 class="card-title card-title-margin">Methodology</h2>
             <hr class="body-hr"/>
@@ -181,8 +157,8 @@
             <p class="card-text">
                 DiffSketcher generates free-hand sketches from a text prompt such as <i>"A photo of Eiffel Tower"</i>.
                 To synthesize a sketch that matches the given text prompt, we optimize the parameters of the
-                differentiable rasterizer <span class="cssFont_1">R</span> that produces the raster sketch <span
-                    class="cssFont_1">S</span>, such that the resulting sketch is close to a sample from the frozen
+                differentiable rasterizer that produces the raster sketch, such that the resulting sketch is close to a
+                sample from the frozen
                 latent diffusion model (the blue part of the picture).
                 Since the diffusion model directly predicts the update direction, we do not need to backpropagate
                 through the diffusion model; the model simply acts like an efficient, frozen critic that predicts
@@ -193,7 +169,7 @@
     <br>
 
     <!-- Demo -->
-    <div class="card" style="width:1000px; margin:0 auto;">
+    <div class="card border-0">
         <div class="card-body">
             <h2 class="card-title card-title-margin">Demo</h2>
             <hr class="body-hr"/>
@@ -235,7 +211,7 @@
     <br>
 
     <!-- Results -->
-    <div class="card" style="width:1000px; margin:0 auto;">
+    <div class="card border-0">
         <div class="card-body">
             <h2 class="card-title card-title-margin">More Results</h2>
             <hr class="body-hr"/>
@@ -308,7 +284,7 @@
     <br>
 
     <!-- Colorful Results -->
-    <div class="card" style="width:1000px; margin:0 auto;">
+    <div class="card border-0">
         <div class="card-body">
             <h2 class="card-title card-title-margin">Painterly Rendering</h2>
             <hr class="body-hr"/>
@@ -348,18 +324,19 @@
     <br>
 
     <!-- Citation -->
-    <div class="card" style="width:1000px; margin:0 auto;">
+    <div class="card border-0">
         <div class="card-body">
             <h2 class="card-title card-title-margin">Citation</h2>
             <p id="bibtex" class="card-text" style="border: #1a1c20 1px">
-                <code> @inproceedings{xing2023diffsketcher,<br>
+                <code>
+                    @inproceedings{xing2023diffsketcher,<br/>
                     &nbsp;&nbsp;title={DiffSketcher: Text Guided Vector Sketch Synthesis through Latent Diffusion
-                    Models},<br>
-                    &nbsp;&nbsp;author={Xing, Ximing and Wang, Chuang and Zhou, Haitao and Zhang, Jing and Yu, Qian and
-                    Xu, Dong},<br>
-                    journal={Thirty-seventh Conference on Neural Information Processing Systems},<br>
-                    &nbsp;&nbsp;year={2023},<br>
-                    url={https://openreview.net/forum?id=CY1xatvEQj}<br>
+                    Models},<br/>
+                    &nbsp;&nbsp;author={XiMing Xing and Chuang Wang and Haitao Zhou and Jing Zhang and Qian Yu and Dong
+                    Xu}, <br/>
+                    &nbsp;&nbsp;booktitle={Thirty-seventh Conference on Neural Information Processing Systems},<br/>
+                    &nbsp;&nbsp;year={2023},<br/>
+                    &nbsp;&nbsp;url={https://openreview.net/forum?id=CY1xatvEQj}<br/>
                     }
                 </code>
             </p>
@@ -403,19 +380,22 @@
 
 </main>
 
-<footer class="container blog-footer" style="width:1000px; margin:0 auto;">
-    <p>
-        This webpage template was originally made by
-        <a href="https://github.com/ximinng"
-           class="link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Ximing Xing</a>.
-    </p>
+
+<footer class="footer">
     <div class="container">
-        <div class="badge bg-primary text-wrap">
-            <p>
-                <a href="#" class="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-                    Back to top
-                </a>
-            </p>
+        <div class="row align-items-center">
+            <!-- left layout -->
+            <div class="col-12 col-md-6 text-md-start text-center">
+                <p class="footer-title mb-0">SVGDreamer: Text Guided SVG Generation with Diffusion Model</p>
+            </div>
+            <!-- right layout -->
+            <div class="col-12 col-md-6 text-md-end text-center">
+                <p class="footer-text mb-0">
+                    This webpage template was originally made by
+                    <a href="https://github.com/ximinng/GithubPages-Template" class="link-primary text-decoration-none">Ximing
+                        Xing</a>.
+                </p>
+            </div>
         </div>
     </div>
 </footer>
